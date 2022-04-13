@@ -1,7 +1,9 @@
-@if(Auth::user()->role->libelle =='admin')
+@if(Auth::user()->role->libelle =='Admin');
     @include('roles.admin')
-@elsif(Auth::user()->role->libelle =='trainer')
+@elseif(Auth::user()->role->libelle =='Trainer');
     @include('roles.trainer')
-@elsif(Auth::user()->role->libelle =='user')
+@elseif(Auth::user()->role->libelle =='User');
     @include('roles.user')
 @endif
+
+
