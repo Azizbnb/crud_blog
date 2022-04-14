@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-red-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
@@ -13,5 +13,39 @@
                 </div>
             </div>
         </div>
+
+        <div class=" my-40 mx-36 grid grid-cols-4 border border-black rounded-r-lg rounded-l-lg">
+            <table class="col-span-4 ">
+                <thead>
+                    <tr class="bg-indigo-300 font-bold">
+                        <th class="w-40 rounded-tl-lg">Name</th>
+                        <th class="w-40">Email</th>
+                        <th class="w-40 rounded-tr-lg">Role</th>
+                    </tr>
+                </thead>
+
+                <tbody class="bg-white w-40 text-center">
+                    @foreach ( $users as $user )
+                    <tr>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->role->libelle }}</td>
+                    </tr>
+
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </x-app-layout>

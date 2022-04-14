@@ -32,7 +32,14 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (Auth::user()->role->libelle == "Admin"){
+            return redirect()->route('admin.index');
+        }elseif (Auth::user()->role->libelle == "Trainer"){
+            return redirect()->route('trainer.index');
+        }elseif (Auth::user()->role->libelle == "User"){
+            return redirect()->route('user.index');
+        }
+
     }
 
     /**
