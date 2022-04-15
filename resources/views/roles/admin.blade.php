@@ -14,13 +14,13 @@
             </div>
         </div>
 
-        <div class=" my-40 mx-36 grid grid-cols-4 border border-black rounded-r-lg rounded-l-lg">
-            <table class="col-span-4 ">
-                <thead>
-                    <tr class="bg-indigo-300 font-bold">
-                        <th class="w-40 rounded-tl-lg">Name</th>
+        <div class=" my-40 mx-36 grid grid-cols-4">
+            <table class="col-span-4 shadow-xl">
+                <thead class="">
+                    <tr class="bg-indigo-400 font-bold rounded-md">
+                        <th class="w-40">Name</th>
                         <th class="w-40">Email</th>
-                        <th class="w-40 rounded-tr-lg">Role</th>
+                        <th class="w-40">Role</th>
                     </tr>
                 </thead>
 
