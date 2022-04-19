@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CategoryFactory extends Factory
 {
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +18,7 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name'=> $this->faker->sentence(rand(1, 3), true)
         ];
     }
 }
