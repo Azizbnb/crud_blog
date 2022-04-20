@@ -23,11 +23,10 @@ Route::get('/dashboard', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/index',[App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
-    /* Route::get('/create', [App\Http\Controllers\FilmController::class, 'create'])->name('film.create');
-    Route::post('/store', [App\Http\Controllers\FilmController::class, 'store'])->name('film.store');
-    Route::get('/edit/{id}', [App\Http\Controllers\FilmController::class, 'edit'])->name('film.edit');
-    Route::patch('/update/{id}', [App\Http\Controllers\FilmController::class, 'update'])->name('film.update');
-    Route::delete('/delete/{id}', [App\Http\Controllers\FilmController::class, 'delete'])->name('film.delete'); */
+    Route::get('/edit/{id}', [App\Http\Controllers\AdminController::class, 'edit'])->name('admin.edit');
+    Route::patch('/update/{id}', [App\Http\Controllers\AdminController::class, 'update'])->name('admin.update');
+    Route::delete('/destroy/{id}', [App\Http\Controllers\AdminController::class, 'destroy'])->name('admin.destroy');
+
 });
 
 require __DIR__.'/auth.php';
