@@ -14,15 +14,21 @@
             </div>
         </div>
 
-        <div class=" my-40 mx-36 grid grid-cols-4">
-            <p class="font-semibold text-xl">modifier le profil de {{ $user->name }}</p>
-           <form action="{{ route('admin.update', $user->id) }}" method="POST" class="">
-            @csrf
-            @method('PATCH')
-            @include('roles.admin.edit.form')
-            <button type="submit" class="bg-indigo-600 text-gray-900">
-                enregistrer
-            </button>
+
+        <div class="w-1/2 mx-auto pt-24">
+            <a href="{{ route('admin.index') }}" class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+            </a>
+            <p class="font-semibold text-xl mt-4">modifier le profil de {{ $user->name }}</p>
+           <form action="{{ route('admin.update', $user->id) }}" method="POST" class="w-2/3 mx-auto mt-4">
+                @csrf
+                @method('PATCH')
+                @include('roles.admin.edit.form')
+                <button type="submit" class="mt-4 px-6 py-2 bg-green-400 text-white rounded-lg">
+                    enregistrer
+                </button>
            </form>
 
         </div>

@@ -26,12 +26,12 @@
                     </tr>
                 </thead>
 
-                <tbody class="bg-white w-40 text-center">
+                <tbody class="bg-white w-40 text-center overflow-y-scroll">
                     @foreach ( $users as $user )
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{-- {{ $user->role->libelle}} --}}</td>
+                        <td>{{ $user->role->libelle }}</td>
                         <td class="flex justify-center">
                             <a  href="{{ route('admin.edit', $user->id) }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

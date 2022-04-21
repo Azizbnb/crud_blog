@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function edit($id){
         $user=User::find($id);
         $roles=Role::all();
-        return view('roles.admin.edit.index')->with(["user" => $user, "roles" => $roles])->with('flash_message', 'user modifié!');
+        return view('roles.admin.edit.index')->with(["user" => $user, "roles" => $roles]);
     }
     public function update(Request $request, $id){
         $users=User::all();
@@ -25,7 +25,7 @@ class AdminController extends Controller
         $user->email = $request->email;
         $user->role_id = $request->role_id;
         $user->save();
-        return redirect()->route('admin.index')->with(["users"=>$users])->with('flash_message', 'user mis à jour!');
+        return redirect()->route('admin.index')->with(["users"=>$users]);
 
     }
 
@@ -33,7 +33,7 @@ class AdminController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('admin.index')->with('flash_message', 'user supprimé!');
+        return redirect()->route('admin.index');
 
     }
 }

@@ -18,7 +18,7 @@
     focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         <option selected>...</option>
         @foreach ($roles as $role)
-            <option value="{{ old('role_id') ?? $user->role_id }}" @if ($user->role_id === $role->id) selected='selected' @endif>{{ $role->libelle }}</option>
+            <option value="{{ $role->id }}" @if($user->role_id == $role->id) selected='selected' @endif>{{ $role->libelle }}</option>
         @endforeach
     </select>
 </div>
